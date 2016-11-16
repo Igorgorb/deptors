@@ -4,9 +4,17 @@
         <servlet-name>LoginService</servlet-name>
         <servlet-class>ua.oilukraine.server.LoginServiceImpl</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>DataService</servlet-name>
+        <servlet-class>ua.oilukraine.server.DataServiceImpl</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>LoginService</servlet-name>
         <url-pattern>/ua.oilukraine.Main/loginservice</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DataService</servlet-name>
+        <url-pattern>/ua.oilukraine.Main/dataservice</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

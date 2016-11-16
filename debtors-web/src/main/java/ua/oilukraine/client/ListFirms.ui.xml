@@ -1,0 +1,14 @@
+<!--
+Uncomment this for XHTML entities
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+-->
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+             xmlns:g="urn:import:com.google.gwt.user.client.ui"
+             xmlns:my='urn:import:ua.oilukraine.client'>
+    <ui:style>
+
+    </ui:style>
+    <g:HTMLPanel>
+            <my:ListBoxExt ui:field='listFirms' />
+    </g:HTMLPanel>
+</ui:UiBinder>

@@ -1,1 +1,4 @@
 /debtors-web/src/main/java/ua/oilukraine/server/DB.java
+/debtors-ejb/target/
+/debtors-web/target/
+/debtors-ear/target/

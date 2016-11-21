@@ -8,12 +8,14 @@ package ua.oilukraine.server;
 import com.google.gwt.user.server.rpc.RemoteServiceServlet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.sql.rowset.CachedRowSet;
 
 import ua.oilukraine.client.DataService;
+import ua.oilukraine.shared.DebtorsData;
 import ua.oilukraine.shared.Firm;
 
 /**
@@ -33,6 +35,19 @@ public class DataServiceImpl extends RemoteServiceServlet implements DataService
             Logger.getLogger(DataServiceImpl.class.getName()).log(Level.SEVERE, null, ex);
             list = null;
         }
+        return list;
+    }
+
+    @Override
+    public List<DebtorsData> getDebtorsData(String okpo, Date date_info) {
+        List<DebtorsData> list = null;
+        DB db = new DB();
+//        try {
+            list = db.getDebtorsData(okpo, date_info);
+//        } catch (SQLException ex) {
+//            Logger.getLogger(DataServiceImpl.class.getName()).log(Level.SEVERE, null, ex);
+//            list = null;
+//        }
         return list;
     }
 }

@@ -7,7 +7,6 @@ package ua.oilukraine.client;
 
 import com.google.gwt.core.client.EntryPoint;
 import com.google.gwt.core.client.GWT;
-import com.google.gwt.i18n.client.DateTimeFormat;
 import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.ui.RootPanel;
 import com.google.gwt.user.client.rpc.AsyncCallback;
@@ -15,7 +14,6 @@ import com.google.gwt.user.client.ui.VerticalPanel;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import ua.oilukraine.shared.LoginInfo;
-import java.util.Date;
 
 /**
  * Main entry point.
@@ -101,9 +99,14 @@ public class MainEntryPoint implements EntryPoint {
         VerticalPanel vPanel = new VerticalPanel();
         vPanel.setSpacing(10);
 //        vPanel.add(new HeaderWidget().Load());
-        vPanel.add(new HeaderWidget().Load());
+        HeaderWidget hw = new HeaderWidget();
+        hw.Load();
+        vPanel.add(hw);
+        TabelView tw = new TabelView();
+        hw.addHeaderWidgetHandler(tw);
+        vPanel.add(tw);
 //        CellTableExample ct = new CellTableExample();
-//        // ct.onModuleLoad();
+        //        // ct.onModuleLoad();
         NewUiBinder nb = new NewUiBinder("able", "baker", "charlie");
 //        RootPanel.get().add(button);
 //        RootPanel.get().add(label);

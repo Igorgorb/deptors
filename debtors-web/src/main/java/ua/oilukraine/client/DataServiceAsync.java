@@ -6,8 +6,10 @@
 package ua.oilukraine.client;
 
 import com.google.gwt.user.client.rpc.AsyncCallback;
+import java.util.Date;
 import ua.oilukraine.shared.Firm;
 import java.util.List;
+import ua.oilukraine.shared.DebtorsData;
 
 /**
  *
@@ -16,4 +18,6 @@ import java.util.List;
 public interface DataServiceAsync {
 
     public void getFirms(String s, AsyncCallback<List<Firm> > callback);
+    
+    public void getDebtorsData(String okpo, Date date_info, AsyncCallback<List<DebtorsData> > callback);
 }

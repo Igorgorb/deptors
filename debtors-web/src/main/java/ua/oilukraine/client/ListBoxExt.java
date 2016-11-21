@@ -55,6 +55,7 @@ public class ListBoxExt extends ListBox implements TakesValue<String> {
         listItems.clear();
         listItems.addAll(options);
         for (Firm item : listItems) {
+//            addItem(item.getName() + "(" + item.getOkpo() + ")", Long.valueOf(item.getCode()).toString());
             addItem(item.getName() + "(" + item.getOkpo() + ")", item.getOkpo());
         }
     }

@@ -6,6 +6,7 @@
 package ua.oilukraine.shared;
 
 import com.google.gwt.user.client.rpc.IsSerializable;
+import com.google.gwt.view.client.ProvidesKey;
 import java.util.Date;
 
 /**
@@ -34,6 +35,13 @@ public class DebtorsData implements IsSerializable, Comparable<DebtorsData> {
     private long fixed_sum;
     private long ref_user;
     private long ref_firm;
+
+    public static final ProvidesKey<DebtorsData> KEY_PROVIDER = new ProvidesKey<DebtorsData>() {
+        @Override
+        public Object getKey(DebtorsData item) {
+            return item == null ? null : item.getCode();
+        }
+    };
 
     public DebtorsData() {
     }

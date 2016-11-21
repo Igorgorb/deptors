@@ -6,6 +6,7 @@
 package ua.oilukraine.shared;
 
 import com.google.gwt.user.client.rpc.IsSerializable;
+import com.google.gwt.view.client.ProvidesKey;
 import java.util.Objects;
 
 /**
@@ -17,6 +18,13 @@ public class Firm implements IsSerializable, Comparable<Firm> {
     private String name;
     private String okpo;
     private long code;
+
+    public static final ProvidesKey<Firm> KEY_PROVIDER = new ProvidesKey<Firm>() {
+        @Override
+        public Object getKey(Firm item) {
+            return item == null ? null : item.getCode();
+        }
+    };
 
     public Firm() {
     }
